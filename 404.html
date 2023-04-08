@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <script type="text/javascript">
+            // if there are at least two slashes in the pathname, then we're in a subdir
+            if (window.location.pathname === "/") {
+                return;
+            }
+
+            const prefix = window.location.pathname.split("/")[1];
+            const newDomain = "https://" + prefix + ".substack.com";
+            const path = window.location.pathname.replace("/" + prefix, "");
+            const search = window.location.search;
+            const hash = window.location.hash;
+            const newURL = newDomain + path + search + hash;
+            window.location.replace(newURL);
+        </script>
+    <title>mrawesome.github.io</title>
+  </head>
+  <body>
+        <noscript>This redirect uses JavaScript. If you don't have JavaScript enabled, replace "soobstack.github.io/somename" with somename.substack.com by hand.</noscript>
+  </body>
+</html>
